@@ -41,6 +41,8 @@ data class LlmRequest(
     val advancedPayloadJson: String? = null,
     /** Earlier turns of the conversation, sent as real messages before [query]. */
     val history: List<AiConversationTurn> = emptyList(),
+    /** Stable for every request of one conversation, for providers that route or cache by session. */
+    val sessionId: String? = null,
 )
 
 /** Provider response plus request-level delivery details needed by the result UI. */
