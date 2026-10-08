@@ -272,6 +272,7 @@ fun aiProviderDisplayName(providerId: AiSearchLlmProviderId): String =
             AiSearchLlmProviderId.ANTHROPIC -> R.string.search_engine_claude
             AiSearchLlmProviderId.GROQ -> R.string.settings_ai_provider_groq
             AiSearchLlmProviderId.META -> R.string.settings_ai_provider_meta
+            AiSearchLlmProviderId.OPENCODE -> R.string.settings_ai_provider_opencode
             else -> R.string.common_custom
         },
     )

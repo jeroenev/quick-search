@@ -278,6 +278,13 @@ internal fun AiProviderAttributionRow(
                     )
                 }
             }
+            AiSearchLlmProviderId.OPENCODE -> {
+                Text(
+                        text = stringResource(R.string.settings_ai_provider_opencode),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = contentColor,
+                )
+            }
             else -> {
                 if (llmProviderId.isCustom) {
                     Text(

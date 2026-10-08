@@ -195,13 +195,13 @@ class AiSearchHandler(
 
     fun isThinkingEnabled(): Boolean {
         ensureInitialized()
-        if (activeProviderId == AiSearchLlmProviderId.OPENAI || activeProviderId.isCustom) return false
+        if (!isThinkingRequestSupported(activeProviderId)) return false
         return thinkingEnabled
     }
 
     fun setThinkingEnabled(enabled: Boolean) {
         ensureInitialized()
-        if (activeProviderId == AiSearchLlmProviderId.OPENAI || activeProviderId.isCustom) return
+        if (!isThinkingRequestSupported(activeProviderId)) return
         if (enabled == thinkingEnabled) return
 
         thinkingEnabled = enabled
