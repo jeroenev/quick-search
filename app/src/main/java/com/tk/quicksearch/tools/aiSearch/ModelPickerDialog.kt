@@ -230,7 +230,8 @@ private fun providerSortOrder(providerId: AiSearchLlmProviderId): Int =
         AiSearchLlmProviderId.ANTHROPIC -> 2
         AiSearchLlmProviderId.GROQ -> 3
         AiSearchLlmProviderId.META -> 4
-        else -> 5
+        AiSearchLlmProviderId.OPENCODE -> 5
+        else -> 6
     }
 
 @Composable
@@ -291,6 +292,13 @@ private fun ProviderWordmark(
                 )
             }
         }
+        AiSearchLlmProviderId.OPENCODE -> {
+            Text(
+                text = stringResource(R.string.settings_ai_provider_opencode),
+                style = MaterialTheme.typography.labelMedium,
+                color = contentColor,
+            )
+        }
         AiSearchLlmProviderId.GEMINI -> {
             Box(modifier = Modifier.size(width = 67.dp, height = 15.dp)) {
                 Image(
@@ -325,6 +333,7 @@ private fun providerSearchName(providerId: AiSearchLlmProviderId): String =
         AiSearchLlmProviderId.ANTHROPIC -> "Claude"
         AiSearchLlmProviderId.GROQ -> "Groq"
         AiSearchLlmProviderId.META -> "Meta AI"
+        AiSearchLlmProviderId.OPENCODE -> "OpenCode"
         else -> "Custom"
     }
 

@@ -312,6 +312,13 @@ private fun ProviderLogo(
                 )
             }
         }
+        AiSearchLlmProviderId.OPENCODE -> {
+            Text(
+                text = stringResource(R.string.settings_ai_provider_opencode),
+                style = MaterialTheme.typography.titleMedium,
+                color = contentColor,
+            )
+        }
         AiSearchLlmProviderId.GEMINI -> {
             Box(modifier = Modifier.height(16.dp).aspectRatio(288f / 65f)) {
                 Image(
